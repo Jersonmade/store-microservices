@@ -14,8 +14,10 @@ import java.util.List;
 @Builder
 public class ProductResponse {
     private String id;
+    private String nameId;
     private String name;
     private String description;
+    private String categories;
     private BigDecimal price;
     private List<String> images;
 }

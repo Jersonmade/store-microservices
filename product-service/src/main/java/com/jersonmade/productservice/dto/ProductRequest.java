@@ -13,8 +13,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductRequest {
+    private String nameId;
     private String name;
     private String description;
+    private String categories;
     private BigDecimal price;
     private List<String> images;
 }

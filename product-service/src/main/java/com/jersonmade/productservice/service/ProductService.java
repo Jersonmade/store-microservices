@@ -19,8 +19,10 @@ public class ProductService {
 
     public void createProduct(ProductRequest productRequest) {
         Product product = Product.builder()
+                .nameId(productRequest.getNameId())
                 .name(productRequest.getName())
                 .description(productRequest.getDescription())
+                .categories(productRequest.getCategories())
                 .price(productRequest.getPrice())
                 .images(productRequest.getImages())
                 .build();
@@ -36,8 +38,10 @@ public class ProductService {
     private ProductResponse mapToProductResponse(Product product) {
         return ProductResponse.builder()
                 .id(product.getId())
+                .nameId(product.getNameId())
                 .name(product.getName())
                 .description(product.getDescription())
+                .categories(product.getCategories())
                 .price(product.getPrice())
                 .images(product.getImages())
                 .build();

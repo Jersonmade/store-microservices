@@ -19,8 +19,10 @@ public class Product {
 
     @Id
     private String id;
+    private String nameId;
     private String name;
     private String description;
+    private String categories;
     private BigDecimal price;
     private List<String> images;
 }
