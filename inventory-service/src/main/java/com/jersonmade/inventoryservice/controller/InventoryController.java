@@ -1,10 +1,13 @@
 package com.jersonmade.inventoryservice.controller;
 
 
+import com.jersonmade.inventoryservice.dto.InventoryResponse;
 import com.jersonmade.inventoryservice.service.InventoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("api/inventory")
@@ -12,9 +15,9 @@ import org.springframework.web.bind.annotation.*;
 public class InventoryController {
     private final InventoryService inventoryService;
 
-    @GetMapping("/{name}")
+    @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public Boolean isInStock(@PathVariable("name") String name) {
-        return inventoryService.isInStock(name);
+    public List<InventoryResponse> isInStock(@RequestParam List<String> scuCode) {
+        return inventoryService.isInStock(scuCode);
     }
 }
